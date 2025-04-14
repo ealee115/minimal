@@ -1,4 +1,6 @@
 ---
+import Navigation from '../Navigation.astro';
+import Footer from '../components/Footer.astro';
 const PageTitle = 'About me'
 ---
 
@@ -11,9 +13,7 @@ const PageTitle = 'About me'
 		<title>{PageTitle}</title>
 	</head>
 	<body>
-	<a href="/">Home</a>
-	<a href="/about/">About</a>
-	<a href="/blog/">Blog</a>
+	<Navigation />
   <h1>My Astro Site</h1>
   <h1>About Me</h1>
   <h2>... and my new Astro site!</h2>
@@ -21,5 +21,6 @@ const PageTitle = 'About me'
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
 
   <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+  <Footer />
 </body>
 </html>
