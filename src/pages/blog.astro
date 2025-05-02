@@ -1,6 +1,10 @@
 ---
 import Header from '../Components/Header.astro';
 import Footer from '../Components/Footer.astro';
+const allPosts = Object.values(import.meta.glob('./writings/*.md', { eager: true }));
+const pageTitle = "My Astro Learning Blog";
+import Writings from '../components/writings.astro';
+
 ---
 <html lang="en">
   <head>
@@ -14,7 +18,7 @@ import Footer from '../Components/Footer.astro';
     <h1>My Astro Learning Blog</h1>
     <p>This is where I will post about my journey learning Astro.</p>
     <ul>
-      <li><a href="/writings/post_one/">Post 1</a></li>
+      {allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
     </ul>
     <Footer />
     <script>
